@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% block content %}
+<div class="container-fluid">
+<form method="post" action="."  class="form-horizontal" role="form">
+  {% csrf_token %} 
+   <div class="row ">
+      {% bootstrap_form_errors form type='non_fields' %}
+        <div class="col-sm-3">
+          {% bootstrap_field form.username layout='vertical' %}
+    </div>
+   </div>
+   <div class="row">
+        {% bootstrap_form_errors form type='non_fields' %}
+        <div class="col-sm-3">
+         {% bootstrap_field form.password layout='vertical' %}
+       </div>
+       </div>
+  {% buttons submit='Log in' reset="Cancel" %}{% endbuttons %}
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
+<p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
+{% endblock %}
+</div>

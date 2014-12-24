@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}Sign up{% endblock %}
+
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block content %}
+<div class="container-fluid">
+
+<form method="post" action="." class="form-horizontal" role="form">
+  {% csrf_token %}
+ 
+    <div class="row ">
+      {% bootstrap_form_errors form type='non_fields' %}
+        <div class="col-sm-4">
+          {% bootstrap_field form.username layout='vertical' %}
+    </div>
+   </div>
+
+  <div class="row">
+    {% bootstrap_form_errors form type='non_fields' %}
+      <div class="col-sm-4">
+       {% bootstrap_field form.email layout='vertical' %}
+
+    </div>
+ </div>
+       <div class="row">
+        {% bootstrap_form_errors form type='non_fields' %}
+        <div class="col-sm-4">
+         {% bootstrap_field form.password1 layout='vertical' %}
+       </div>
+       </div>
+       <div class="row">
+        {% bootstrap_form_errors form type='non_fields' %}
+        <div class="col-sm-4">
+       {%bootstrap_field form.password2  layout='vertical'%}
+       </div>
+       </div>
+     {% buttons submit='Register' reset="Cancel" %}{% endbuttons %}
+</form>
+</div>
+{% endblock %}

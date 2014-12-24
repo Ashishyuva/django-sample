@@ -1,0 +1,38 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="939" measuredH="732" mockupW="900" mockupH="732">
+  <controls>
+    <control controlID="0" controlTypeID="__group__" x="39" y="0" w="900" h="732" measuredW="900" measuredH="732" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="900" h="732" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <text>Drug%20Classes%0Ahttp%3A//www.PocketPharmacistApp.com</text>
+            <verticalScrollbar>true</verticalScrollbar>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Label" x="59" y="94" w="335" h="-1" measuredW="160" measuredH="23" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>16</size>
+        <text>Listing%20Drug%20Classes</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::SearchBox" x="59" y="150" w="152" h="-1" measuredW="120" measuredH="24" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Button" x="226" y="149" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Search</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::DataGrid" x="44" y="196" w="872" h="340" measuredW="486" measuredH="260" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Drug%20Class%20Name%2C%20Number%20of%20Drugs%2C%20Links%0A%3C%25%3D%20drug_class.name%20%25%3E%2C%20%3C%25%3D%20drug_class.drugs.count%20%25%3E%2C%20%5BShow%5D%20%5BEdit%5D%20%5BDestroy%5D%0A%3C%25%3D%20drug_class.name%20%25%3E%2C%20%3C%25%3D%20drug_class.drugs.count%20%25%3E%2C%20%5BShow%5D%20%5BEdit%5D%20%5BDestroy%5D%0A%3C%25%3D%20drug_class.name%20%25%3E%2C%20%3C%25%3D%20drug_class.drugs.count%20%25%3E%2C%20%5BShow%5D%20%5BEdit%5D%20%5BDestroy%5D%0A%3C%25%3D%20drug_class.name%20%25%3E%2C%20%3C%25%3D%20drug_class.drugs.count%20%25%3E%2C%20%5BShow%5D%20%5BEdit%5D%20%5BDestroy%5D%0A%3C%25%3D%20drug_class.name%20%25%3E%2C%20%3C%25%3D%20drug_class.drugs.count%20%25%3E%2C%20%5BShow%5D%20%5BEdit%5D%20%5BDestroy%5D%0A%3C%25%3D%20drug_class.name%20%25%3E%2C%20%3C%25%3D%20drug_class.drugs.count%20%25%3E%2C%20%5BShow%5D%20%5BEdit%5D%20%5BDestroy%5D%0A%3C%25%3D%20drug_class.name%20%25%3E%2C%20%3C%25%3D%20drug_class.drugs.count%20%25%3E%2C%20%5BShow%5D%20%5BEdit%5D%20%5BDestroy%5D%0A%3C%25%3D%20drug_class.name%20%25%3E%2C%20%3C%25%3D%20drug_class.drugs.count%20%25%3E%2C%20%5BShow%5D%20%5BEdit%5D%20%5BDestroy%5D</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Link" x="59" y="117" w="-1" h="-1" measuredW="94" measuredH="18" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>New%20Drug%20Class</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

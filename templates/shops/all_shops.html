@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+
+{% load pdb %}
+
+{% block content %}
+
+{% if all_shops %}
+  <table  class="table table-hover" >
+       <thead>
+           <tr>
+             <th>Name</th>
+             <th> Description</th>
+             <th>Address</th>
+             <th>Zip Code </th>
+             <th>City</th>
+             <th>State</th>
+             <th>Country</th>
+           </tr>
+        </thead>
+  <tbody>
+  {% for shop in all_shops %}
+  <tr>
+
+    <td>{{shop.name}}</td>
+    <td>{{shop.description}}</td>
+    <td>{{shop.address}}</td>
+    <td>{{shop.zip_code}}</td>
+    <td>{{shop.city}}</td>
+    <td>{{shop.state}}</td>
+    <td>{{shop.country}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+  {% else %}
+        <p>No Shops in the database</p>
+{% endif %}
+{% endblock %}

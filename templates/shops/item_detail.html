@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% block content %}
+{%load pdb%}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<div>
+  <h1>{{item.name}}</h1>
+   <img src="{{MEDIA_URL}}{{item.image}}" width="250" height="150"// >
+    <p> {{item.description}}</p>
+</div>
+<div id="success">
+
+</div>
+
+    <!-- Button HTML (to Trigger Modal) -->
+
+     
+
+    <!-- Modal HTML -->
+
+
+
+{% endblock %}
