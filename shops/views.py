@@ -1,12 +1,13 @@
 from django.shortcuts import get_object_or_404, render
 from django.shortcuts import render_to_response
 from shops.models import Shop
-from shops.models import Product
+from shops.models import Category
 from shops.models import Item
 from django.core.files import File
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger#import settings
 import stripe
 from django.views.decorators.csrf import ensure_csrf_cookie
+import json
 import pdb;
 def new(request):
 
@@ -34,22 +35,22 @@ def new_product(request):
 
 def create_product(request):
     if request.POST:
-        product = Product(name=request.POST['name'],description=request.POST['description'])
+        product = Category(name=request.POST['name'],description=request.POST['description'])
         product.save()
         shop  = Shop.objects.get(id=request.POST['shop_id'])
         product.shop_set.add(shop)
-        all_products = Product.objects.all()
+        all_products = Category.objects.all()
         context = {'all_products': all_products}
     return render(request, 'shops/all_products.html', context) 
 
 def all_products(request):
-    all_products = Product.objects.all()
+    all_products = Category.objects.all()
     context = {'all_products': all_products}
     return render(request, 'shops/all_products.html', context) 
 
 def new_item(request):
     shops = Shop.objects.filter()
-    products = Product.objects.filter()
+    products = Category.objects.filter()
     context = {'shops' : shops,'products' : products}
     return render(request, 'shops/new_item.html', context)
 
@@ -118,7 +119,7 @@ def delete_item(request,item_id):
 
 def edit_item(request,item_id):
     shops = Shop.objects.filter()
-    products = Product.objects.filter()
+    products = Category.objects.filter()
     item = Item.objects.get(pk=item_id)
     context = {'shops' : shops,'products' : products,'item' : item}
     return render(request, 'shops/edit.html', context)
@@ -130,7 +131,7 @@ def update_item(request):
   #  item.image = request.FILES['image']
     item.save()
     shop  = Shop.objects.get(id=request.POST['shop_id'])
-    product = Product.objects.get(id=request.POST['product_id'])
+    product = Category.objects.get(id=request.POST['product_id'])
     item.shop = shop
     item.product = product
     item.save()

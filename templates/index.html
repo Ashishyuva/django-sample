@@ -3,18 +3,46 @@
 {% load pdb %}
 {% load static %}
 {% block content %}
+<div id="myitems" >
 
   <h2>Entries:</h2>
-  <div class="endless_page_template">
-      {% include page_template %}
-  </div>
 
-{% block js %}
+ 
+	  <div class="endless_page_template" style="padding-left:200px; width: 82%;">
+      {% include page_template %}
+	 </div>
+ {% block js %}
     {{ block.super }}
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
-    <script>$.endlessPaginate();</script>
-{% endblock %}
+    <script>$.endlessPaginate();</script>\
+  <script type="text/javascript">
+    $(document).ready(function(){
+    	var sThisVal = ""
+     $('.category_check').bind('change', function () {
 
+        var searchIDs = $("#sidebar input:checkbox:checked").map(function(){
+            return $(this).val();
+          }).toArray();
+        var result = searchIDs.map(function (x) { 
+            return parseInt(x, 10); 
+         });
+           var send_data = JSON.stringify(result)
+          $.ajax({ // create an AJAX call...
+              type: "POST", // GET or POST
+              //dataType: "json",
+              data: {item_id : send_data,search : true},
+              url:  "/",
+              success: function(response) { 
+                 alert(1)
+                $("#myitems").html(response)
+               }
+           });
+           return false;
+      });
+     });
+   </script>
+  {% endblock %}
+ {% endblock %}
 
-{% endblock %}
+</div>
